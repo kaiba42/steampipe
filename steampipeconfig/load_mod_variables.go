@@ -3,7 +3,6 @@ package steampipeconfig
 import (
 	"context"
 	"fmt"
-
 	"sort"
 
 	"github.com/turbot/steampipe/steampipeconfig/parse"
@@ -76,7 +75,7 @@ func getInputVariables(variableMap map[string]*modconfig.Variable, validate bool
 		return nil, err
 	}
 
-	// build map of depedency mod variable values declared in the mod 'Require' section
+	// build map of dependency mod variable values declared in the mod 'Require' section
 	depModVarValues, err := inputvars.CollectVariableValuesFromModRequire(mod, runCtx)
 	if err != nil {
 		return nil, err
